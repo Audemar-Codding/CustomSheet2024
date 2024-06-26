@@ -1,0 +1,1647 @@
+<input type="hidden" class="sheetSizeOption" name="attr_sheetsize" value="attr_sheetsize"/>
+
+<div class="Mysheet">
+  <input type="hidden" class="sheetTabMap" name="attr_sheetTab" value="Principal" />
+  <img class="backgroundMap" src="https://i.imgur.com/jAspPFt.jpg" />
+
+  <input type="hidden" class="modalInput" name="attr_SheetType" value="0"/> 
+<aside class="modalChoice">
+  <h2>Choix du type de fiche:</h2>
+<div>
+  <button type="action" name="act_Joueur">Joueur</button>
+  <button type="action" name="act_Pnj">Pnj</button>
+</div>
+</aside>
+
+
+  <!-- LA FICHE DU PERSONNAGE -->
+  <section class="sheetPlayer">
+
+    <input type="hidden" class="sheetTab" name="attr_sheetTab" value="Principal" />
+
+    <!-- Section Principale -->
+    <section class="Principal">
+      <button type="action" class="Switch SwipeArcanes" name="act_Arcanes"></button>
+      <button type="action" class="SwitchBar" name="act_Arcanes"></button>
+      <button type="action" class="Switch SwipeInventaire" name="act_Inventaire"></button>
+      <button type="action" class="SwitchBar" name="act_Inventaire"></button>
+
+          <!-- HUD -->
+      <div class="DivInfoPerso">
+
+        <div class="InfosPerso1">
+          <input type="text" class="InfoPersoNom" name="attr_Nom" placeholder="Votre Nom" />
+          <input type="text" class="InfoPersoActivite" name="attr_Activite" placeholder="Votre Activité" />
+          <input type="text" class="InfoPersoAge" name="attr_Age" placeholder="Votre Age" />
+        </div>
+
+        <article class="HUD">
+
+          <div class="HUDArcVit">
+
+            <div class="HUDArc">
+
+              <input type="text" maxlength="2" class="HUDArcInput" name="attr_Arcane" placeholder="0" />
+              <div>
+                <img src="https://i.imgur.com/j8GuyvM.png" />
+              </div>
+              <img src="https://i.imgur.com/eUxcMw3.png" />
+            </div>
+
+            <div class="HUDVit">
+
+              <input type="text" maxlength="2" class="HUDVitInput" name="attr_EnergieVitale" placeholder="0" />
+              <div>
+                <img src="https://i.imgur.com/MebXfGJ.png" />
+              </div>
+              <img src="https://i.imgur.com/GwlMEjB.png" />
+            </div>
+
+
+          </div>
+
+
+          <!-- Les PV, Blessure, ect...-->
+          <div class="HUDTokenInfo">
+
+            <div><img src="https://i.imgur.com/iSztE1K.png"><input type="text" maxlength="2" name="attr_HealthPoints"
+                placeholder="0">
+              <p>PV</p>
+            </div>
+            <div><img src="https://i.imgur.com/UNmHNlD.png"><input type="text" maxlength="2" name="attr_WoundsPoints"
+                placeholder="0">
+              <p>Blessure</p>
+            </div>
+            <div><img src="https://i.imgur.com/u6ujSrP.png"><input type="text" maxlength="2" name="attr_EnergiePoints"
+                placeholder="0">
+              <p>Energie</p>
+            </div>
+            <div><img src="https://i.imgur.com/mnsHyPh.png"><input type="text" maxlength="2" name="attr_DefensePoints"
+                placeholder="0">
+              <p>Defense</p>
+            </div>
+
+          </div>
+
+
+        </article>
+
+      </div>
+
+      <div class="InfosPerso2">
+        <input type="text" class="InfoPersoNegative" name="attr_InfoNegative"
+          placeholder="Une info negative, un défaut" />
+        <input type="text" class="InfoPersoPositive" name="attr_InfoPositive"
+          placeholder="Une info positive, une qualité" />
+      </div>
+
+      <div class="Separation"></div>
+
+      <!-- Stats -->
+      <article class="Statistiques">
+
+        <div><button type="roll" 
+            value="&{template:JETSTAT} {{name=Force}} {{roll=[[@{StatForce}d6>4]]}} {{src=[name](https://i.imgur.com/0c1QA5o.png)}}" name="attr_BtnForce"></button><img
+            src="https://i.imgur.com/0c1QA5o.png"><input type="text" maxlength="2" name="attr_StatForce"
+            placeholder="0">
+          <p>Force</p>
+        </div>
+        <div><button type="roll"
+            value="&{template:JETSTAT} {{name=Agilité}} {{roll=[[@{StatAgilite}d6>4]]}} {{src=[name](https://i.imgur.com/WTJ8jk7.png)}}" name="attr_BtnAgilite"></button><img
+            src="https://i.imgur.com/WTJ8jk7.png"><input type="text" maxlength="2" name="attr_StatAgilite"
+            placeholder="0">
+          <p>Agilité</p>
+        </div>
+        <div><button type="roll"
+            value="&{template:JETSTAT} {{name=Intelligence}} {{roll=[[@{StatIntelligence}d6>4]]}} {{src=[name](https://i.imgur.com/mVTteb1.png)}}" name="attr_BtnIntelligence"></button><img
+            src="https://i.imgur.com/mVTteb1.png"><input type="text" maxlength="2" name="attr_StatIntelligence"
+            placeholder="0">
+          <p>Intelligence</p>
+        </div>
+        <div><button type="roll"
+            value="&{template:JETSTAT} {{name=Charisme}} {{roll=[[@{StatCharisme}d6>4]]}} {{src=[name](https://i.imgur.com/56Ir2R0.png)}}" name="attr_BtnCharisme"></button><img
+            src="https://i.imgur.com/56Ir2R0.png"><input type="text" maxlength="2" name="attr_StatCharisme"
+            placeholder="0">
+          <p>Charisme</p>
+        </div>
+        <div><button type="roll"
+            value="&{template:JETSTAT} {{name=Endurance}} {{roll=[[@{StatEndurance}d6>4]]}} {{src=[name](https://i.imgur.com/jfyrpDr.png)}}" name="attr_BtnEndurance"></button><img
+            src="https://i.imgur.com/jfyrpDr.png"><input type="text" maxlength="2" name="attr_StatEndurance"
+            placeholder="0">
+          <p>Endurance</p>
+        </div>
+
+
+      </article>
+
+       <!-- Compétences et Talents -->
+      <article class="ListCompTalent">
+
+        <!-- Compétences -->
+        <section>
+          <h2>Compétences</h2>
+          <div class="competences">
+
+            <input type="checkbox" value="false" id="CheckCompDetail" />
+            
+            
+            <label for="CheckCompDetail">
+              <p>?</p>
+              <label>Cliquez pour plus de détails</label>
+            </label>
+
+            <div>
+              <button type="roll"
+                value="&{template:JetSimple} {{name=Combat - mêlée}} {{icon=[NAME](https://i.imgur.com/jifrZeb.png)}} {{PercentRoll=[[1d100cs<@{CompCMelee}cf>@{CompCMelee}]]}} {{PercentStat=@{CompCMelee} }}"><img
+                  src="https://i.imgur.com/2cevp5K.png" /></button>
+              <p>Combat - mêlée</p>
+              <input type="text" maxlength="2" id="CompCMelee" name="attr_CompCMelee" value="45" >
+              <label for="CompCMelee">%</label>
+              <article>
+                <p>Pour les attaques au corp à corp mais aussi pour toute action qui se fait à courte distance.</p>
+              </article>
+            </div>
+            <div>
+              <button type="roll"
+              value="&{template:JetSimple} {{name=Combat - distance}} {{icon=[NAME](https://i.imgur.com/Grsfs2Y.png)}} {{PercentRoll=[[1d100cs<@{CompCDistance}cf>@{CompCDistance}]]}} {{PercentStat=@{CompCDistance} }}"><img
+                src="https://i.imgur.com/2cevp5K.png" /></button>
+              <p>Combat - distance</p>
+              <input type="text" maxlength="2" id="CompCDistance" name="attr_CompCDistance" value="45">
+              <label for="CompCDistance">%</label>
+              <article>
+                <p>Pour les attaques à distance mais aussi pour toute action à distance demandant de viser.</p>
+              </article>
+            </div>
+            <div>
+              <button type="roll"
+              value="&{template:JetSimple} {{name=Social}} {{icon=[NAME](https://i.imgur.com/RrsETtM.png)}} {{PercentRoll=[[1d100cs<@{CompSocial}cf>@{CompSocial}]]}} {{PercentStat=@{CompSocial} }}">
+              <img src="https://i.imgur.com/2cevp5K.png" /></button>
+              <p>Social</p>
+              <input type="text" maxlength="2" id="CompSocial" name="attr_CompSocial" value="45">
+              <label for="CompSocial">%</label>
+              <article>
+                <p>Pour s'exprimer, convaincre ou mentir mais aussi comment on se comporte en société..</p>
+              </article>
+            </div>
+            <div>
+              <button type="roll"
+              value="&{template:JetSimple} {{name=Perception}} {{icon=[NAME](https://i.imgur.com/4Fc2o7o.png)}} {{PercentRoll=[[1d100cs<@{CompPerception}cf>@{CompPerception}]]}} {{PercentStat=@{CompPerception} }}">
+              <img src="https://i.imgur.com/2cevp5K.png" /></button>
+              <p>Perception</p>
+              <input type="text" maxlength="2" id="CompPerception" name="attr_CompPerception" value="45">
+              <label for="CompPerception">%</label>
+              <article>
+                <p>Pour toute action utilisant ses sens (vue,ouie,odorat,tactile et goût)</p>
+              </article>
+            </div>
+            <div>
+              <button type="roll"
+              value="&{template:JetSimple} {{name=Mouvement}} {{icon=[NAME](https://i.imgur.com/U5eyerL.png)}} {{PercentRoll=[[1d100cs<@{CompMouvement}cf>@{CompMouvement}]]}} {{PercentStat=@{CompMouvement} }}">
+              <img src="https://i.imgur.com/2cevp5K.png" /></button>
+              <p>Mouvement</p>
+              <input type="text" maxlength="2" id="CompMouvement" name="attr_CompMouvement" value="45">
+              <label for="CompMouvement">%</label>
+              <article>
+                <p>Pour se mouvoir dans l'espace, esquiver..</p>
+              </article>
+            </div>
+            <div>
+              <button type="roll"
+              value="&{template:JetSimple} {{name=Survie}} {{icon=[NAME](https://i.imgur.com/Cjr2mJq.png)}} {{PercentRoll=[[1d100cs<@{CompSurvie}cf>@{CompSurvie}]]}} {{PercentStat=@{CompSurvie} }}">
+              <img src="https://i.imgur.com/2cevp5K.png" /></button>
+              <p>Survie</p>
+              <input type="text" maxlength="2" id="CompSurvie" name="attr_CompSurvie" value="45">
+              <label for="CompSurvie">%</label>
+              <article>
+                <p>Pour résister aux effets négatif, encaisser les agressions physique..</p>
+              </article>
+            </div>
+            <div>
+              <button type="roll"
+              value="&{template:JetSimple} {{name=Savoir - nature}} {{icon=[NAME](https://i.imgur.com/P1EcBrR.png)}} {{PercentRoll=[[1d100cs<@{CompSnature}cf>@{CompSnature}]]}} {{PercentStat=@{CompSnature} }}">
+              <img src="https://i.imgur.com/2cevp5K.png" /></button>
+              <p>Savoir - nature</p>
+              <input type="text" maxlength="2" id="CompSnature" name="attr_CompSnature" value="45">
+              <label for="CompSnature">%</label>
+              <article>
+                <p>Pour savoir ce qui touche à la nature, aux arcanes..</p>
+              </article>
+            </div>
+            <div>
+              <button type="roll"
+              value="&{template:JetSimple} {{name=Savoir - histoire}} {{icon=[NAME](https://i.imgur.com/tBmEZ51.png)}} {{PercentRoll=[[1d100cs<@{CompShistoire}cf>@{CompShistoire}]]}} {{PercentStat=@{CompShistoire} }}">
+              <img src="https://i.imgur.com/2cevp5K.png" /></button>
+              <p>Savoir - histoire</p>
+              <input type="text" maxlength="2" id="CompShistoire" name="attr_CompShistoire" value="45">
+              <label for="CompShistoire">%</label>
+              <article>
+                <p>Pour savoir ce qui touche à l'histoire du monde, au passé d'un lieu..</p>
+              </article>
+            </div>
+            <div>
+              <button type="roll"
+              value="&{template:JetSimple} {{name=Savoir - langues}} {{icon=[NAME](https://i.imgur.com/IF3PmmV.png)}} {{PercentRoll=[[1d100cs<@{CompSlangues}cf>@{CompSlangues}]]}} {{PercentStat=@{CompSlangues} }}">
+              <img src="https://i.imgur.com/2cevp5K.png" /></button>
+              <p>Savoir - langues</p>
+              <input type="text" maxlength="2" id="CompSlangues" name="attr_CompSlangues" value="45">
+              <label for="CompSlangues">%</label>
+              <article>
+                <p>Pour savoir ce qui touche aux langues non commune, à l'origine des mots..</p>
+              </article>
+            </div>
+
+            <aside>
+              <img src="https://i.imgur.com/0c1QA5o.png" />
+              <img src="https://i.imgur.com/WTJ8jk7.png">
+              <img src="https://i.imgur.com/mVTteb1.png">
+              <img src="https://i.imgur.com/56Ir2R0.png">
+              <img src="https://i.imgur.com/jfyrpDr.png">
+            </aside>
+
+          </div>
+        </section>
+
+        <!-- En main + Talents -->
+        <section class="HandAndTalent">
+          <input type="checkbox" value="false" id="CheckInHandTalentDetail" />
+
+          <label for="CheckInHandTalentDetail">
+            <p>?</p>
+            <label>Cliquez pour plus de détails</label>
+          </label>
+
+          <h2>En Main</h2>
+          <div class="inHand">
+            <div>
+
+              <button type="roll"
+                value="&{template:JetSimple} {{name=@{inHandOneName}}} {{Desc=@{inHandOneDesc}}} {{PercentRoll=[[1d100cs<@{inHandOnePercent}cf>@{inHandOnePercent}]]}} {{PercentStat=@{inHandOnePercent} }}"><img
+                  src="https://i.imgur.com/2cevp5K.png" /></button>
+              <input type="text" id="inHandOneName" name="attr_inHandOneName" placeholder="Le nom - Première main">
+              <input type="text" maxlength="2" id="inHandOnePercent" name="attr_inHandOnePercent" value="99">
+              <label for="inHandOnePercent">%</label>
+              <textarea name="attr_inHandOneDesc" cols="30" rows="10" placeholder="La description"></textarea>
+ 
+            
+            </div>
+            <div>
+    
+               <button type="roll"
+                 value="&{template:JetSimple} {{name=@{inHandTwoName}}} {{Desc=@{inHandTwoDesc}}} {{PercentRoll=[[1d100cs<@{inHandTwoPercent}cf>@{inHandTwoPercent}]]}} {{PercentStat=@{inHandTwoPercent} }}"><img
+                   src="https://i.imgur.com/2cevp5K.png" /></button>
+               <input type="text" id="inHandTwoName" name="attr_inHandTwoName" placeholder="Le nom - Seconde main">
+               <input type="text" maxlength="2" id="inHandTwoPercent" name="attr_inHandTwoPercent" value="99">
+               <label for="inHandTwoPercent">%</label>
+               <textarea name="attr_inHandTwoDesc" cols="30" rows="10" placeholder="La description"></textarea> 
+ 
+
+             </div>
+          </div>
+          <h2>Talents</h2>
+          <fieldset class="repeating_talent">
+
+            <div>
+
+              <button type="roll"
+                value="&{template:JetSimple} {{name=@{Name}}} {{Desc=@{Desc}}} {{PercentRoll=[[1d100cs<[[@{Percent}+@{StatTalent}*2+45]]cf>[[@{Percent}+@{StatTalent}*2+45]]]]}} {{PercentStat=[[@{Percent}+@{StatTalent}*2+45]] }}"><img
+                  src="https://i.imgur.com/2cevp5K.png" /></button>
+              <input type="text"  name="attr_Name" placeholder="Nom du talent">
+              
+<aside>
+  <input type="radio" name="attr_StatTalent" value="27.5"  checked />
+  <input type="radio" name="attr_StatTalent" value="@{StatForce}"  />
+  <input type="radio" name="attr_StatTalent" value="@{StatAgilite}"  />
+  <input type="radio" name="attr_StatTalent" value="@{StatIntelligence}"  />
+  <input type="radio" name="attr_StatTalent" value="@{StatCharisme}"  />
+  <input type="radio" name="attr_StatTalent" value="@{StatEndurance}"  />
+</aside>
+
+              <input type="text" maxlength="2" id="Percent" name="attr_Percent" value="99">
+              <label for="Percent">%</label>
+              <textarea name="attr_Desc" cols="30" rows="10" placeholder="La description"></textarea>
+ 
+            </div>
+
+          </fieldset>
+
+          
+        </section>
+
+
+
+      </article>
+
+
+    </section>
+
+    <!-- Section Inventaire -->
+    <section class="Inventaire">
+      <button type="action" class="Switch SwipePrincipal" name="act_Principal"></button>
+      <button type="action" class="SwitchBar" name="act_Principal"></button>
+      <button type="action" class="Switch SwipeArcanes" name="act_Arcanes"></button>
+      <button type="action" class="SwitchBar" name="act_Arcanes"></button>
+      
+      <!-- BricABrac d'items -->
+      <article class="bricABrac">
+<div>
+<textarea name="attr_BricABrac" />
+<img src="https://i.imgur.com/ZLTJ1BP.png"/>
+  <input type="text" class="gold" name="attr_Gold" maxlength="4" placeholder="Poor"/>
+</div>
+      </article>   
+
+      <div class="Separation"></div>
+
+      <!-- Les listes d'items -->
+      <article class="EquipementRecettes">
+
+        <section class="Equipement">
+          <input type="checkbox" value="false" id="CheckEquipementDetail" />
+
+          <label for="CheckEquipementDetail">
+            <p>?</p>
+            <label>Cliquez pour plus de détails</label>
+          </label>
+
+          
+          <h2>Equipement</h2>
+         
+
+          
+          <fieldset class="repeating_equipement">
+
+            <div>
+
+
+
+              
+              <button type="roll"
+                value="&{template:JetSimple} {{name=@{Name}}} {{Desc=@{Desc}}} {{PercentRoll=[[1d100cs<@{Percent}cf>@{Percent}]] }} {{PercentStat=@{Percent}}} {{StatEquipement= TEST }}
+                 @{StatEquipement}">
+                 <img src="https://i.imgur.com/2cevp5K.png" /></button>
+              <input type="text"  name="attr_Name" placeholder="Nom de l'objet">
+              
+<aside>
+  <input type="radio" name="attr_StatEquipement" value=" "  checked />
+  <input type="radio" name="attr_StatEquipement" value="@{BtnForce}"/>
+  <input type="radio" name="attr_StatEquipement" value="@{BtnAgilite}"  />
+  <input type="radio" name="attr_StatEquipement" value="@{BtnIntelligence}"  />
+  <input type="radio" name="attr_StatEquipement" value="@{BtnCharisme}"  />
+  <input type="radio" name="attr_StatEquipement" value="@{BtnEndurance}"  />
+</aside>
+
+              <input type="text" maxlength="2" id="Percent" name="attr_Percent" value="99">
+              <label for="Percent">%</label>
+              <textarea name="attr_Desc" cols="30" rows="10" placeholder="La description"></textarea>
+ 
+            </div>
+
+          </fieldset>
+
+      
+
+        </section>
+
+        <section class="Recettes">
+       
+          <input type="checkbox" value="false" id="CheckRecettesDetail" />
+
+          <label for="CheckRecettesDetail">
+            <p>?</p>
+            <label>Cliquez pour plus de détails</label>
+          </label>
+
+          
+          <h2>Recettes</h2>
+
+          <fieldset class="repeating_recettes">
+
+            <div>
+
+              <button type="roll"
+                value="&{template:JetSimple} {{name=@{Name}}} {{Desc=@{Desc}}} {{PercentRoll=[[1d?{Energie Vitale}cs>[[?{Arcane|1|2|3|4|5|6|7|8|9|10}+1]]cf<?{Arcane}]] }} {{PercentStat=?{Arcane}}}">
+                 <img src="https://i.imgur.com/2cevp5K.png" /></button>
+              <input type="text"  name="attr_Name" placeholder="Nom de l'objet">
+
+              <textarea name="attr_Desc" cols="30" rows="10" placeholder="La description"></textarea>
+ 
+            </div>
+
+          </fieldset>
+        </section>
+
+
+      </article>
+
+
+    </section>
+
+    <!-- Section Arcanes -->
+    <section class="Arcanes">
+      <button type="action" class="Switch SwipeInventaire" name="act_Inventaire"></button>
+      <button type="action" class="SwitchBar" name="act_Inventaire"></button>
+      <button type="action" class="Switch SwipePrincipal" name="act_Principal"></button>
+      <button type="action" class="SwitchBar" name="act_Principal"></button>
+
+<article class="ArcaneStat">
+  
+<div class="arcanesPrincipales">
+  <input type="text" name="attr_Arcanefeu" class="Arcanefeu" maxlength="2"  >
+  <input type="text" name="attr_Arcaneair" class="Arcaneair" maxlength="2"  >
+  <input type="text" name="attr_Arcaneeau" class="Arcaneeau" maxlength="2"  >
+  <input type="text" name="attr_Arcaneterre" class="Arcaneterre" maxlength="2"  >
+</div>
+
+<article>
+
+<div class="arcanesSecondaires">
+<input type="text" class="arcSecondaire1" maxlength="2">
+<input type="text" class="arcSecondaire2" maxlength="2">
+<input type="text" class="arcSecondaire3" maxlength="2">
+<input type="text" class="arcSecondaire4" maxlength="2">
+<input type="text" class="arcSecondaire5" maxlength="2">
+<input type="text" class="arcSecondaire6" maxlength="2">
+<input type="text" class="arcSecondaire7" maxlength="2">
+<input type="text" class="arcSecondaire8" maxlength="2">
+</div>
+
+<div class="spellsSlot">
+<input type="checkbox" name="attr_SpellSplot1">
+<input type="checkbox" name="attr_SpellSplot2">
+<input type="checkbox" name="attr_SpellSplot3">
+</div>
+</article>
+
+
+</article> 
+
+
+
+<div class="Separation"></div>
+
+
+
+<article class="SortEtMots">
+
+  <section class="ArcanesSorts">
+    <input type="checkbox" value="false" id="CheckSortsDetail" />
+
+    <label for="CheckSortsDetail">
+      <p>?</p>
+      <label>Cliquez pour plus de détails</label>
+    </label>
+
+    
+    <h2>Arcanes - Sorts</h2>
+   
+    <fieldset class="repeating_arcanessorts">
+
+      <div>
+
+        <button type="roll"
+          value="&{template:JetSimple} {{name=@{Name}}} {{Desc=@{Desc}}} {{PercentRoll=[[1d100cs<@{Percent}cf>@{Percent}]] }} {{PercentStat=@{Percent}}} {{mots= @{NmbrMots} }}">
+           <img src="https://i.imgur.com/2cevp5K.png" /></button>
+        <input type="text"  name="attr_Name" placeholder="Nom du sort">
+        
+<input type="text" name="attr_NmbrMots" value="1" maxlength="2"/>
+
+        <input type="text" maxlength="2" id="Percent" name="attr_Percent" value="99">
+        <label for="Percent">%</label>
+        <textarea name="attr_Desc" cols="30" rows="10" placeholder="La description"></textarea>
+
+      </div>
+
+    </fieldset>
+
+  </section>
+
+  <section class="ArcanesMots">
+ 
+    <input type="checkbox" value="false" id="CheckMotsDetail" />
+
+    <label for="CheckMotsDetail">
+      <p>?</p>
+      <label>Cliquez pour plus de détails</label>
+    </label>
+
+    
+    <h2>Mots connus</h2>
+
+    <fieldset class="repeating_arcanesmots">
+
+      <div>
+
+        <button type="roll"
+          value="&{template:Display} {{name=@{Name}}} {{Desc=@{Desc}}}">
+           <img src="https://i.imgur.com/2cevp5K.png" /></button>
+        <input type="text"  name="attr_Name" placeholder="le Mots">
+
+        <textarea name="attr_Desc" cols="30" rows="10" placeholder="La description"></textarea>
+
+      </div>
+
+    </fieldset>
+  </section>
+
+
+</article>
+
+    </section>
+
+<aside class="sheetOptions">
+  <select class="sheetSize" name="attr_sheetsize">
+  <option value="60">petit</option>
+  <option value="80">moyen</option>
+  <option value="100">gros</option>
+</select>
+</aside>
+</section> <!--FIN Sheet Personnage-->
+
+<!-- LA FICHE PNJ -->
+<section class="sheetPnj">
+
+<input type="checkbox" class="PnjOptionCheck"/>  
+
+<div class="modalPnjOptions">
+
+<div>
+<label for="Classe">Classe</label>
+<select name="attr_PnjClasse" id="Classe">
+  <option value="0">TankHP</option>
+  <option value="1">GuerrierDPS</option>
+  <option value="2">RogueDps</option>
+  <option value="3">RogueDistance</option>
+  <option value="4">MageDps</option>
+  <option value="5">MageSoutien</option>
+</select>  
+
+<label for="Difficulty">Difficulté</label>
+<select name="attr_PnjDifficulty" id="Difficulty">
+  <option value="1">Simple</option>
+  <option value="2">Moyen</option>
+  <option value="3">Difficile</option>
+</select>  
+
+
+  <button type="action" name="atc_RandomPnj">Random Stats</button>
+
+
+</div>
+
+</div>
+
+  <div class="DivInfoPerso">
+
+      <div class="InfosPerso1">
+        <input type="text" class="InfoPersoNom" name="attr_Nom" placeholder="Nom" />
+        <input type="text" class="InfoPersoActivite" name="attr_Race" placeholder="Race" />
+      </div>
+
+      <!-- Les PV, Blessure, ect...-->
+      <div class="HUDTokenInfo">
+
+        <div><img src="https://i.imgur.com/iSztE1K.png"><input type="text" maxlength="2" name="attr_HealthPoints"
+            placeholder="0">
+          <p>PV</p>
+        </div>
+        <div><img src="https://i.imgur.com/UNmHNlD.png"><input type="text" maxlength="2" name="attr_WoundsPoints"
+            placeholder="0">
+          <p>Blessure</p>
+        </div>
+        <div><img src="https://i.imgur.com/u6ujSrP.png"><input type="text" maxlength="2" name="attr_EnergiePoints"
+            placeholder="0">
+          <p>Energie</p>
+        </div>
+        <div><img src="https://i.imgur.com/mnsHyPh.png"><input type="text" maxlength="2" name="attr_DefensePoints"
+            placeholder="0">
+          <p>Defense</p>
+        </div>
+
+      </div>
+
+
+  </div>
+
+<div class="DivArcVitStat">
+  <div class="HUDArcVit">
+
+    <div class="HUDArc">
+      <input type="text" maxlength="2" class="HUDArcInput" name="attr_Arcane" placeholder="0" />
+      <img src="https://i.imgur.com/eUxcMw3.png" />
+    </div>
+
+    <div class="HUDVit">
+
+      <input type="text" maxlength="4" class="HUDVitInput" name="attr_EnergieVitale" placeholder="0" />
+      <img src="https://i.imgur.com/GwlMEjB.png" />
+    </div>
+
+
+</div>
+  
+  <!-- Stats -->
+  <article class="Statistiques">
+
+          <div><button type="roll" 
+              value="&{template:JETSTAT} {{name=Force}} {{roll=[[@{StatForce}d6>4]]}} {{src=[name](https://i.imgur.com/0c1QA5o.png)}}" name="attr_BtnForce"></button><img
+              src="https://i.imgur.com/0c1QA5o.png"><input type="text" maxlength="2" name="attr_StatForce"
+              placeholder="0">
+
+          </div>
+          <div><button type="roll"
+              value="&{template:JETSTAT} {{name=Agilité}} {{roll=[[@{StatAgilite}d6>4]]}} {{src=[name](https://i.imgur.com/WTJ8jk7.png)}}" name="attr_BtnAgilite"></button><img
+              src="https://i.imgur.com/WTJ8jk7.png"><input type="text" maxlength="2" name="attr_StatAgilite"
+              placeholder="0">
+
+          </div>
+          <div><button type="roll"
+              value="&{template:JETSTAT} {{name=Intelligence}} {{roll=[[@{StatIntelligence}d6>4]]}} {{src=[name](https://i.imgur.com/mVTteb1.png)}}" name="attr_BtnIntelligence"></button><img
+              src="https://i.imgur.com/mVTteb1.png"><input type="text" maxlength="2" name="attr_StatIntelligence"
+              placeholder="0">
+
+          </div>
+          <div><button type="roll"
+              value="&{template:JETSTAT} {{name=Charisme}} {{roll=[[@{StatCharisme}d6>4]]}} {{src=[name](https://i.imgur.com/56Ir2R0.png)}}" name="attr_BtnCharisme"></button><img
+              src="https://i.imgur.com/56Ir2R0.png"><input type="text" maxlength="2" name="attr_StatCharisme"
+              placeholder="0">
+
+          </div>
+          <div><button type="roll"
+              value="&{template:JETSTAT} {{name=Endurance}} {{roll=[[@{StatEndurance}d6>4]]}} {{src=[name](https://i.imgur.com/jfyrpDr.png)}}" name="attr_BtnEndurance"></button><img
+              src="https://i.imgur.com/jfyrpDr.png"><input type="text" maxlength="2" name="attr_StatEndurance"
+              placeholder="0">
+
+          </div>
+  
+  
+  </article>
+
+</div>  
+
+<div class="ReapetingsPnj">
+ <!-- Compétences -->
+ 
+ <article class="compAndInventory">
+
+  <section class="comp">
+          <h2>Compétences</h2>
+          <div class="competences">            
+            <div>
+              <button type="roll"
+                value="&{template:JetSimple} {{name=Combat - mêlée}} {{icon=[NAME](https://i.imgur.com/jifrZeb.png)}} {{PercentRoll=[[1d100cs<@{CompCMelee}cf>@{CompCMelee}]]}} {{PercentStat=@{CompCMelee} }}"><img
+                  src="https://i.imgur.com/2cevp5K.png" /></button>
+              <p>Combat - mêlée</p>
+              <input type="text" maxlength="2" id="CompCMelee" name="attr_CompCMelee" value="45" >
+              <label for="CompCMelee">%</label>
+            </div>
+            <div>
+              <button type="roll"
+              value="&{template:JetSimple} {{name=Combat - distance}} {{icon=[NAME](https://i.imgur.com/Grsfs2Y.png)}} {{PercentRoll=[[1d100cs<@{CompCDistance}cf>@{CompCDistance}]]}} {{PercentStat=@{CompCDistance} }}"><img
+                src="https://i.imgur.com/2cevp5K.png" /></button>
+              <p>Combat - distance</p>
+              <input type="text" maxlength="2" id="CompCDistance" name="attr_CompCDistance" value="45">
+              <label for="CompCDistance">%</label>
+            </div>
+            <div>
+              <button type="roll"
+              value="&{template:JetSimple} {{name=Social}} {{icon=[NAME](https://i.imgur.com/RrsETtM.png)}} {{PercentRoll=[[1d100cs<@{CompSocial}cf>@{CompSocial}]]}} {{PercentStat=@{CompSocial} }}">
+              <img src="https://i.imgur.com/2cevp5K.png" /></button>
+              <p>Social</p>
+              <input type="text" maxlength="2" id="CompSocial" name="attr_CompSocial" value="45">
+              <label for="CompSocial">%</label>
+            </div>
+            <div>
+              <button type="roll"
+              value="&{template:JetSimple} {{name=Perception}} {{icon=[NAME](https://i.imgur.com/4Fc2o7o.png)}} {{PercentRoll=[[1d100cs<@{CompPerception}cf>@{CompPerception}]]}} {{PercentStat=@{CompPerception} }}">
+              <img src="https://i.imgur.com/2cevp5K.png" /></button>
+              <p>Perception</p>
+              <input type="text" maxlength="2" id="CompPerception" name="attr_CompPerception" value="45">
+              <label for="CompPerception">%</label>
+
+            </div>
+            <div>
+              <button type="roll"
+              value="&{template:JetSimple} {{name=Mouvement}} {{icon=[NAME](https://i.imgur.com/U5eyerL.png)}} {{PercentRoll=[[1d100cs<@{CompMouvement}cf>@{CompMouvement}]]}} {{PercentStat=@{CompMouvement} }}">
+              <img src="https://i.imgur.com/2cevp5K.png" /></button>
+              <p>Mouvement</p>
+              <input type="text" maxlength="2" id="CompMouvement" name="attr_CompMouvement" value="45">
+              <label for="CompMouvement">%</label>
+            </div>
+            <div>
+              <button type="roll"
+              value="&{template:JetSimple} {{name=Survie}} {{icon=[NAME](https://i.imgur.com/Cjr2mJq.png)}} {{PercentRoll=[[1d100cs<@{CompSurvie}cf>@{CompSurvie}]]}} {{PercentStat=@{CompSurvie} }}">
+              <img src="https://i.imgur.com/2cevp5K.png" /></button>
+              <p>Survie</p>
+              <input type="text" maxlength="2" id="CompSurvie" name="attr_CompSurvie" value="45">
+              <label for="CompSurvie">%</label>
+            </div>
+            <div>
+              <button type="roll"
+              value="&{template:JetSimple} {{name=Savoir - nature}} {{icon=[NAME](https://i.imgur.com/P1EcBrR.png)}} {{PercentRoll=[[1d100cs<@{CompSnature}cf>@{CompSnature}]]}} {{PercentStat=@{CompSnature} }}">
+              <img src="https://i.imgur.com/2cevp5K.png" /></button>
+              <p>Savoir - nature</p>
+              <input type="text" maxlength="2" id="CompSnature" name="attr_CompSnature" value="45">
+              <label for="CompSnature">%</label>
+            </div>
+            <div>
+              <button type="roll"
+              value="&{template:JetSimple} {{name=Savoir - histoire}} {{icon=[NAME](https://i.imgur.com/tBmEZ51.png)}} {{PercentRoll=[[1d100cs<@{CompShistoire}cf>@{CompShistoire}]]}} {{PercentStat=@{CompShistoire} }}">
+              <img src="https://i.imgur.com/2cevp5K.png" /></button>
+              <p>Savoir - histoire</p>
+              <input type="text" maxlength="2" id="CompShistoire" name="attr_CompShistoire" value="45">
+              <label for="CompShistoire">%</label>
+            </div>
+            <div>
+              <button type="roll"
+              value="&{template:JetSimple} {{name=Savoir - langues}} {{icon=[NAME](https://i.imgur.com/IF3PmmV.png)}} {{PercentRoll=[[1d100cs<@{CompSlangues}cf>@{CompSlangues}]]}} {{PercentStat=@{CompSlangues} }}">
+              <img src="https://i.imgur.com/2cevp5K.png" /></button>
+              <p>Savoir - langues</p>
+              <input type="text" maxlength="2" id="CompSlangues" name="attr_CompSlangues" value="45">
+              <label for="CompSlangues">%</label>
+            </div>
+
+          </div>
+
+ </section>
+
+ <div class="bricABrac">
+  <div>
+    <textarea name="attr_BricABrac" />
+    <img src="https://i.imgur.com/ZLTJ1BP.png"/>
+      <input type="text" class="gold" name="attr_Gold" maxlength="4" placeholder="Poor"/>
+    </div>
+  </div>
+ 
+</article>
+
+
+ <article class="pnjObjetsActionSorts">
+
+  <section id="pnjObjetsActions">
+
+        <h2>Objets/Actions</h2>
+     
+      <fieldset class="repeating_equipement">
+        <div>
+          <button type="roll"
+            value="&{template:JetSimple} {{name=@{Name}}} {{Desc=@{Desc}}} {{PercentRoll=[[1d100cs<@{Percent}cf>@{Percent}]] }} {{PercentStat=@{Percent}}} {{StatEquipement= TEST }}
+             @{StatEquipement}">
+             <img src="https://i.imgur.com/2cevp5K.png" /></button>
+          <input type="text"  name="attr_Name" placeholder="Nom de l'objet">
+          
+<aside>
+<input type="radio" name="attr_StatEquipement" value=" "  checked />
+<input type="radio" name="attr_StatEquipement" value="@{BtnForce}"/>
+<input type="radio" name="attr_StatEquipement" value="@{BtnAgilite}"  />
+<input type="radio" name="attr_StatEquipement" value="@{BtnIntelligence}"  />
+<input type="radio" name="attr_StatEquipement" value="@{BtnCharisme}"  />
+<input type="radio" name="attr_StatEquipement" value="@{BtnEndurance}"  />
+</aside>
+
+          <input type="text" maxlength="2" id="Percent" name="attr_Percent" value="99">
+          <label for="Percent">%</label>
+          <textarea name="attr_Desc" cols="30" rows="10" placeholder="La description"></textarea>
+
+        </div>
+
+      </fieldset>
+
+
+  </section>
+
+  <section id="pnjSorts">
+        <h2>Arcanes - Sorts</h2>
+     
+      <fieldset class="repeating_arcanessorts">
+  
+        <div>
+  
+          <button type="roll"
+            value="&{template:JetSimple} {{name=@{Name}}} {{Desc=@{Desc}}} {{PercentRoll=[[1d100cs<@{Percent}cf>@{Percent}]] }} {{PercentStat=@{Percent}}} {{mots= @{NmbrMots} }}">
+             <img src="https://i.imgur.com/2cevp5K.png" /></button>
+          <input type="text"  name="attr_Name" placeholder="Nom du sort">
+          
+  <input type="text" name="attr_NmbrMots" value="1" maxlength="2"/>
+  
+          <input type="text" maxlength="2" id="Percent" name="attr_Percent" value="99">
+          <label for="Percent">%</label>
+          <textarea name="attr_Desc" cols="30" rows="10" placeholder="La description"></textarea>
+  
+        </div>
+  
+      </fieldset>
+  
+  </section>
+
+  <section id="pnjTalents">
+    <h2>Talents</h2>
+  <fieldset class="repeating_talent">
+    <div>
+
+      <button type="roll"
+        value="&{template:JetSimple} {{name=@{Name}}} {{Desc=@{Desc}}} {{PercentRoll=[[1d100cs<[[@{Percent}+@{StatTalent}*2+45]]cf>[[@{Percent}+@{StatTalent}*2+45]]]]}} {{PercentStat=[[@{Percent}+@{StatTalent}*2+45]] }}"><img
+          src="https://i.imgur.com/2cevp5K.png" /></button>
+      <input type="text"  name="attr_Name" placeholder="Nom du talent">
+      
+<aside>
+<input type="radio" name="attr_StatTalent" value="27.5"  checked />
+<input type="radio" name="attr_StatTalent" value="@{StatForce}"  />
+<input type="radio" name="attr_StatTalent" value="@{StatAgilite}"  />
+<input type="radio" name="attr_StatTalent" value="@{StatIntelligence}"  />
+<input type="radio" name="attr_StatTalent" value="@{StatCharisme}"  />
+<input type="radio" name="attr_StatTalent" value="@{StatEndurance}"  />
+</aside>
+
+      <input type="text" maxlength="2" id="Percent" name="attr_Percent" value="99">
+      <label for="Percent">%</label>
+      <textarea name="attr_Desc" cols="30" rows="10" placeholder="La description"></textarea>
+
+    </div>
+  </fieldset>
+  </section>
+
+ </article>
+
+</div>
+
+  <aside class="sheetOptions">
+    <select class="sheetSize" name="attr_sheetsize">
+    <option value="60">petit</option>
+    <option value="80">moyen</option>
+    <option value="100">gros</option>
+  </select>
+  </aside>  
+</section> <!--FIN Sheet PNJ-->
+
+
+</div> <!--FIN MYSHEET-->
+
+
+
+
+<!-- ===================== LE SCRIPT ================= -->
+
+<script type="text/worker">
+console.clear();
+
+function RecupListMateriaux(TypeMateriaux) {
+
+  let tabMateriauxViable = [];
+ 
+  for (let Materiau of TabMateriaux) {
+    
+    if( Arcane>= Materiau[8] && Arcane<= Materiau[9]) {
+    
+    switch (TypeMateriaux) {
+        
+        case "MSD":
+        if(Materiau[1] == "M" || Materiau[1] == "MSD" )
+        { tabMateriauxViable.push(Materiau); }
+
+        if(Materiau[1] == "S" || Materiau[1] == "MSD" )
+        { tabMateriauxViable.push(Materiau); }
+
+        if(Materiau[1] == "D" || Materiau[1] == "MSD" )
+        { tabMateriauxViable.push(Materiau); }
+        break;
+   
+        case "MD":
+        if(Materiau[1] == "M" || Materiau[1] == "MSD" )
+        { tabMateriauxViable.push(Materiau); }
+
+        if(Materiau[1] == "D" || Materiau[1] == "MSD" )
+        { tabMateriauxViable.push(Materiau); }
+        break;
+
+case "MS":
+if(Materiau[1] == "M" || Materiau[1] == "MSD" )
+{ tabMateriauxViable.push(Materiau); }
+
+if(Materiau[1] == "S" || Materiau[1] == "MSD" )
+{ tabMateriauxViable.push(Materiau); }
+break;
+
+        case "S": 
+        
+        if(Materiau[1] == "S" || Materiau[1] == "MSD" )
+        { tabMateriauxViable.push(Materiau); }
+        break;
+        
+        case "D":      
+        
+        if(Materiau[1] == "D" || Materiau[1] == "MSD" )
+        { tabMateriauxViable.push(Materiau); }
+        break;
+
+        case "M":
+        if(Materiau[1] == "M" || Materiau[1] == "MSD" )
+        { tabMateriauxViable.push(Materiau); }
+        break;
+        
+    }
+    
+    }
+    
+  }
+  
+  console.log(tabMateriauxViable);
+  return tabMateriauxViable;
+  
+  
+  }
+
+// =================================================================
+// ===================== Gestion PNJ auto ==========================
+
+
+let Difficulty = 0;
+let Arcane = 0;
+let Class = 0;
+let Energie = 0;
+
+// Class: [ArmureBonus(nombre d'armure et arcane max), ArmeBonus(arcane max), SortBonus(nombre de sort et de mots bonus),stats,type ]
+let ClassesTab = {
+  0: [2,0,-1,[1,1,0,0,2],"F"], //Tank
+  1: [1,1,0,[2,1,0,0,1],"F"], //GuerrierDPS
+  2: [0,2,0,[1,2,0,0,1],"A"], //RogueDps
+  3: [0,2,0,[0,2,1,0,1],"D"], //RogueDistance
+  4: [0,0,1,[0,2,1,1,0],"S"], //MageDps
+  5: [0,0,2,[0,1,2,1,0],"S"], //MageSoutien
+ }
+
+// Mots Sort
+let TabSortMots = 
+[
+"Compacter","Etendre","Grossir","Reduire","Propulser","Attirer",
+"Diviser","Chercher","Dissimuler","Solidifier","Amplifier","Former",
+"Figer","Envelopper","Elever","Tourner",
+]
+
+
+
+// Armes Force
+let TabWeaponForce =
+[
+["Epée simple", 1,0, "Attaque sur 1,5m, ARC: V _ POINTE: V _ SIMPLE: V", "MD"],
+["Epée lourde", 1,2, "Attaque sur 1,5m, ARC: V _ POINTE: V _ SIMPLE: V", "MD" ],
+["Lance simple", 1,-1, "Attaque pointe sur 3m et possibilité de la lancer, ARC: X _ POINTE: V _ SIMPLE: X", "MS" ],
+["Masse simple", 1,0, "Attaque sur 1,5m et un coup juste assomme sa cible, ARC: X _ POINTE: X _ SIMPLE: V", "MD"],
+["Masse lourde", 1.5,0, "Attaque sur 3m, ARC: X _ POINTE: X _ SIMPLE: V", "MD"],
+["Gourdin", 0.5,0, "Attaque sur 1,5m et un coup juste assomme sa cible, ARC: X _ POINTE: X _ SIMPLE: V", "S"],
+["Hache double", 1.5,0, "Attaque sur 3m en arc de cercle et pas d'attaque rapide, ARC: V _ POINTE: X _ SIMPLE: X", "MD"],
+["Espadon", 1.5,0, "Attaque sur 3m en arc de cercle et pas d'attaque rapide et -10% Comp CAC, ARC: V _ POINTE: V _ SIMPLE: X", "MD"],
+["Hache courte", 1,0, "Attaque sur 1,5m et +5% cac, ARC: V _ POINTE: X _ SIMPLE: V", "MD"]
+]
+
+//Armes Agi
+let TabWeaponAgi =
+[
+["Epée simple", 1,0, "Attaque sur 1,5m, ARC: V _ POINTE: V _ SIMPLE: V", "MD"],
+["Javelots", 1,0, "A lancer ou attaque pointe lente sur 1,5m , ARC: X _ POINTE: V _ SIMPLE: X", "MS"],
+["Lance simple", 1,-1, "Attaque pointe sur 3m et possibilité de la lancer, ARC: X _ POINTE: V _ SIMPLE: X", "MS"],
+["Gourdin", 0.5,0, "Attaque sur 1,5m et un coup juste assomme sa cible, ARC: X _ POINTE: X _ SIMPLE: V", "S"],
+["Dague", 0.5,0, "Attaque sur 1,5m et +5% attaques rapides, ARC: V _ POINTE: V _ SIMPLE: V", "MD"],
+["Dague dentelé", 0.5,0, "Attaque sur 1,5m et provoque une blessure, ARC: X _ POINTE: V _ SIMPLE: V", "MD"],
+["Katana", 1,0, "Attaque sur 1,5m , ARC: X _ POINTE: V _ SIMPLE: V", "M"],
+["Rapiére", 1,-2, "Attaque sur pointe 3m et attaque rapide uniquement +5%, ARC: X _ POINTE: V _ SIMPLE: X", "M"],
+]
+
+let TabWeaponDistance =
+[
+["Javelots", 1,0, "A lancer ou attaque pointe lente sur 1,5m , ARC: X _ POINTE: V _ SIMPLE: X", "MS"],
+["Arc court", 0.5,2, "Attaque sur max 15m", "S"],
+["Arc long", 0.5,0, "Attaque sur max 25m", "S"],
+["Arbaléte", 1,0, "Attaque sur max 30m, doit être recharger", "S"],
+["Fronde", 1,0, "Attaque sur 30m max, Munition illimité (cailloux)", "MS"],
+]
+
+let TabWeap = [TabWeaponForce,TabWeaponAgi,TabWeaponDistance];
+
+//["name","Maléable et/ou Dur et/ou souple",ArmorModif,DmgForce,DmgAgi,PVModif,EnergieModif,"stat modif",Arcane Min,Arcane Max],
+let TabMateriaux = [
+["Monaille","MSD",0,0,0,0,0,"",1,10],
+["Fer simple","M",0,0,0,3,0,"",1,4],
+["Cuivre","M",-1,0,-1,2,-0.5,"",1,5],
+["Titane","D",3,2,3,1,1.5,"Endu +1",7,10],
+["Zinc","M",-2,-1,-1,2,0.5,"",1,10],
+["Or","M",-1,1,-2,-1,1.5,"Char +1",3,10],
+["Monaille","M",1,2,1,-1,-0.5,"Char +1",3,8],
+["Platine","D",3,3,2,-1,1,"Char +1",4,10],
+["Nickel","M",1,1,0,1,0.5,"",1,5],
+["Aluminium","M",-2,-2,2,2,1,"",2,6],
+["Fer Rouge","M",2,1,1,3,-1,"Force -1",2,6],
+["Kronon","S",-3,-5,-3,2,0.5,"Intel +1",4,10],
+["Moritium","D",5,-1,3,-2,1,"",7,10],
+["Talikam","M",3,3,1,0,0.5,"",2,8],
+["Feroliu","M",-5,-2,3,4,1,"Agi +1",1,8],
+["Joltes","S",-1,0,1,1,-0.5,"",3,6],
+["Bois simple","S",1,0,0,1,0,"",1,10],
+["Chanpignon bleu","S",-2,0,0,0,0,"Intel +1",4,10],
+["Bois noueux","S",1,0,0,1,1,"",2,5],
+["Bois carapace","S",3,3,4,-1,3,"",8,10],
+]
+
+let TabMisc = ["des fruits secs","une dent","des épices de cuisine","des boules d'argile","un bloc de bois","des Herbes et plantes",
+"des morceaux de parchemin froissés","un stylos plume cassés","un flacons/flacons/verrerie cassés","un pots d'encre renversés",
+"des os","de la poussière","des baies","des feuilles","des racines assorties","des outils de maconnerie","un jeux de table",
+"des assiettes","un équipement d'équitation","de la poussiére de gemmes","un livre déchiquetés et écrasés","des morceaux de tissu",
+"des ustensiles de cuisine","du charbons","un morceaux de roche","une poche vide","des vêtements non lavés","des bibelots",
+"un sacs","des aliments moisis","des assiettes en bois","du savons","des petites idoles en bois ou en argile","des insectes morts",
+"des copeaux de bois/métal","un verre brisé","des cailloux","des petits morceaux de bois","des bougies écrasées",
+"une mèches de rechange","des outils cassés","des têtes d'outils/pièces","une clé pliée","des morceaux de parchemin déchiré",
+"un livret sur un sujet très précis","des pièces d'un tableau","des cadres photo vides","des briques","une carte faite par un gobelin (nul)",
+"des graines","des fils/ficelle","des morceaux de corde déroulés","du coton","des excréments de petits animaux",
+"des petits morceaux d'argile non façonnés","un masque cassé","une seule pièce de métal","une petite bande de métal",
+"un morceau de fourrure","un peu de farine renversée","un hameçon","un petit animal mort","une bouteille vide",
+"un filet qui s'effiloche","une peintures séchées","des clous en bois","une pince à épiler","un balai","une baratte à beurre",
+"un seau","un seau","un bracelet en cuir","une boucle en métal","une lentille en verre","une cloche portative","un battant de cloche",
+"une cheville en bois","un porte-monnaie vide","une toile partiellement peinte","une plante agricole","une charrue à roues",
+"des algues séchées","un verre peint","des chaussures en cuir","une aiguille","un bac en paille","des restes alimentaires",
+"un couteau","un panier","des dalles de rechange","une cravache","une paire de cisailles","une roue","un pot vide","un rasoir",
+"un livre intéréssant","Un creuset alchimique","une Chaîne en métal (3m)","un petit coffre","un cadenas simple",
+"une corde d'escalade (15m)","une Longue-vue (150m)","un petit Miroir","une pelle","un sac de couchage",]
+
+
+// ["name","Armure","Energie","STAT","Matériaux"]
+let TabArmorHead = [
+["Casque",0.5,2,"","M"],
+["Chapeau",0.25,1,"","MS"],
+["Coiffe",0,1,"Charisme -1","S"],
+["Diademe",0,0,"","MD"],
+["Boucle",0,0,"","MD"],
+["Broche",0,0,"","MD"],
+["Lunettes",0,1,"Perception +5 / Perception -5","MD"],
+["Heaume",1,3,"Perception -5","MD"],
+["Visiére",0.75,2,"","MD"],
+["Bandeau",0,1,"","souple"],
+]
+
+let TabArmorHand = [
+["brassard",1,3,"CAC -5","D"],
+["Gant",0.25,1,"","MS"],
+["bracelet",0,1,"","MD"],
+["gantelet",0.75,2,"","MD"],
+]
+
+let TabArmorLeg = [
+["Genoulliére",0.5,1,"Mouvement -3","MD" ],
+["Bottes simple",0.75,2,"","S"],
+["Pantalon",0.5,1,"","S"],
+["Bas",0,1,"Charisme +1","S"],
+["Baskouet",0.5,2,"Mouvement +5","S"],
+["sandale",0,1,"Mouvement -5","S"],
+["Jambiéres",1.5,3,"Mouvement -5","MD"],
+["Cuissots",0.75,2,"","MD"],
+]
+
+let TabArmorTorso = [
+["corset",0.5,2,"Charisme +1","MS"],
+["plastron",0.75,3,"","MD"],
+["cuirasse",1.25,4,"Mouvement -5","MD"],
+["Manteau",0.5,2,"","S"],
+["chemise",0.25,1,"","S"],
+["robe",0.5,2,"","S"],
+]
+
+
+function RandomArmor() {
+
+ let TabArmor = [TabArmorHead,TabArmorHand,TabArmorLeg,TabArmorTorso];
+ let NumberOfArmor = ClassesTab[Class][0];
+
+ randomValue = random(0,100)+(Difficulty-1)*2;
+
+  if (randomValue >= 95) {
+    NumberOfArmor += 3;
+  } else if (randomValue >= 75) {
+    NumberOfArmor += 2;
+  } else if (randomValue >= 50) {
+    NumberOfArmor += 1;
+  }
+
+
+let EnergieDispo = Energie;
+
+for(let i=0;i<NumberOfArmor;i++) {
+
+let ArmorPiece;
+
+let newrowid = generateRowID();
+let newrowattrs = {};
+
+  if(EnergieDispo > 1 && i<5) {
+
+    ArmorPiece =  TabArmor[i][random(0,TabArmor[i].length-1)]
+    
+    EnergieDispo -= ArmorPiece[2];
+    
+    if(EnergieDispo > 1) { a
+
+      let ListMateriaux = RecupListMateriaux(ArmorPiece[4]);
+      ListMateriaux = ListMateriaux.filter(subArray => subArray[6] <= ( EnergieDispo - 1));
+
+let LeMateriaux = ListMateriaux[random(0,ListMateriaux.length-1)];
+
+let StatArmor = ArmorPiece[1] + LeMateriaux[2];
+let StatEnergie = (ArmorPiece[2] + LeMateriaux[6]) *-1;
+
+      newrowattrs["repeating_equipement_" + newrowid + "_Desc"] = "Armor: " + StatArmor + " | Energie: " + StatEnergie + " | " + ArmorPiece[3] + ", " +  LeMateriaux[7];
+
+    }
+  }
+else{break;}
+
+newrowattrs["repeating_equipement_" + newrowid + "_Name"] = ArmorPiece[0]
+newrowattrs["repeating_equipement_" + newrowid + "_Percent"] = 99;
+setAttrs(newrowattrs);
+
+}
+
+
+
+}
+
+
+
+//====================================================================
+//=========================== T E S T =================================
+
+// Delete à peut prés
+// DeleteALl()
+// function DeleteALl() {
+// getSectionIDs("repeating_arcanessorts", function(idarray) {
+//      for(var i=0; i < idarray.length; i++) {
+//        removeRepeatingRow("repeating_arcanessorts" + idarray[i]);
+//      }
+//   });}
+
+
+function RandomEV() {
+  let EvValue = Arcane * Difficulty / 10;
+  setAttrs({"EnergieVitale":  EvValue }); 
+}
+
+ function RandomSpell() {
+
+  let ModifSpell = Difficulty+ClassesTab[Class][2];
+
+  var newrowid = generateRowID();
+    var newrowattrs = {};
+    newrowattrs["repeating_arcanessorts_" + newrowid + "_NmbrMots"] = 0;
+    newrowattrs["repeating_arcanessorts_" + newrowid + "_Name"] = "----- Mots connus -----"; 
+
+    newrowattrs["repeating_arcanessorts_" + newrowid + "_Desc"] = getRandomElements(TabSortMots,ModifSpell);
+    setAttrs(newrowattrs);
+
+    let i=0;
+
+    while(i<ModifSpell){
+      i++;
+      var newrowid = generateRowID();
+      var newrowattrs = {};
+      newrowattrs["repeating_arcanessorts_" + newrowid + "_NmbrMots"] = 0;
+      newrowattrs["repeating_arcanessorts_" + newrowid + "_Name"] = "Sort N°" + i;
+      let MaxM = ModifSpell * Arcane;
+      newrowattrs["repeating_arcanessorts_" + newrowid + "_Desc"] = "Mots Max: " + MaxM +"";
+      setAttrs(newrowattrs);
+    }
+
+ }
+
+
+  //function RandomTalent() {
+    //  var newrowid = generateRowID();
+    //  var newrowattrs = {};
+    //  newrowattrs["repeating_talent_" + newrowid + "_Name"] = "Nom du talent";
+    //  newrowattrs["repeating_talent_" + newrowid + "_Desc"] = "Description";
+    //  setAttrs(newrowattrs);
+    //}
+
+// ============================= FIN TEST ==================================
+
+
+on("clicked:RandomPnj", function() {
+    
+  getAttrs(["Arcane"], function(value) { Arcane = parseInt(value.Arcane, 10)});
+    
+  getAttrs(["EnergiePoints"], function(value) { Energie = parseInt(value.EnergiePoints, 10)});
+
+  getAttrs(["PnjDifficulty"], function(value) { Difficulty = parseInt(value.PnjDifficulty, 10)}); 
+  getAttrs(["PnjClasse"], function(value) { Class = parseInt(value.PnjClasse, 10);
+    
+    RandomPts();
+    RandomTalent();
+    RandomWeapon();
+    RandomSpell();
+    RandomLoot();
+    RandomEV();
+    RandomArmor();
+
+  });
+  
+  
+  });
+
+
+  function RandomLoot() {
+
+    getAttrs(["BricABrac"], function(value) { 
+        
+      let items = [];
+      for(let i=0;i<random(1,4);i++){
+        items[i] = TabMisc[random(0,105)] + " "
+      }
+      
+      
+      setAttrs({"BricABrac": value.BricABrac + items + ", "  }); });
+      
+      let money = "";
+      if(random(0,100)<(25+(Difficulty-1)*10)){money = random(Difficulty*Arcane-1,Difficulty*Arcane)}
+      setAttrs({"Gold":  money }); 
+
+
+  }
+
+
+
+
+  function RandomWeapon() {
+
+    let i = 0;
+    let NmbrArme = 1;
+  
+    switch(ClassesTab[1]) { 
+      case 1 : 
+    if(random(0,25) < 26) {NmbrArme++}
+      break;
+      case 2 :
+      NmbrArme++
+      break;
+  default :
+  break;
+    }
+    
+    while(i<NmbrArme){
+      i++;
+      var newrowid = generateRowID();
+      var newrowattrs = {};
+  
+      let RadioValue;
+
+
+  
+      switch(ClassesTab[Class][4]) {
+        case "F" :
+        RadioValue = "@{BtnForce}";
+        let randomForce = random(1,9);
+ 
+        let TabMateriauxViable = RecupListMateriaux(TabWeaponForce[randomForce-1][4]);
+        let randomMateriaux = random(0,TabMateriauxViable.length-1);
+
+        newrowattrs["repeating_equipement_" + newrowid + "_Name"] = TabWeaponForce[randomForce-1][0] + " en " + TabMateriauxViable[randomMateriaux][0];
+        let dmgForce = TabWeaponForce[randomForce-1][1]*Arcane+-3+random(1,Difficulty) + TabWeaponForce[randomForce-1][2] + TabMateriauxViable[randomMateriaux][3] ;
+        newrowattrs["repeating_equipement_" + newrowid + "_Desc"] = dmgForce + "DMG | "+ TabWeaponForce[randomForce-1][3];
+        break;
+  
+        case "A" :
+        RadioValue = "@{BtnAgilite}";
+        let randomAgi = random(1,8);
+
+        let TabMateriauxViable4 = RecupListMateriaux(TabWeaponAgi[randomAgi-1][4]);
+        let randomMateriaux4 = random(0,TabMateriauxViable4.length-1);
+
+        newrowattrs["repeating_equipement_" + newrowid + "_Name"] = TabWeaponAgi[randomAgi-1][0] + " en " + TabMateriauxViable4[randomMateriaux4][0];
+        let dmgAgi = TabWeaponAgi[randomAgi-1][1]*Arcane+-3+random(1,Difficulty) + TabWeaponAgi[randomAgi-1][2] + TabMateriauxViable4[randomMateriaux4][4];
+        newrowattrs["repeating_equipement_" + newrowid + "_Desc"] = dmgAgi + "DMG | "+ TabWeaponAgi[randomAgi-1][3];
+        break;
+  
+        case "D" :
+        RadioValue = "@{BtnAgilite}";
+        let randomDistance = random(1,5);
+
+
+        let TabMateriauxViable2 = RecupListMateriaux(TabWeaponDistance[randomDistance-1][4]);
+        let randomMateriaux2 = random(0,TabMateriauxViable2.length-1);
+
+        newrowattrs["repeating_equipement_" + newrowid + "_Name"] = TabWeaponDistance[randomDistance-1][0] + " en " + TabMateriauxViable2[randomMateriaux2][0];
+        let dmgDistance = TabWeaponDistance[randomDistance-1][1]*Arcane+-3+random(1,Difficulty) + TabWeaponDistance[randomDistance-1][2] + TabMateriauxViable2[randomMateriaux2][4];
+        newrowattrs["repeating_equipement_" + newrowid + "_Desc"] = dmgDistance + "DMG | "+ TabWeaponDistance[randomDistance-1][3];
+        
+        getAttrs(["BricABrac"], function(value) { setAttrs({"BricABrac": value.BricABrac + "Munitions: " + random(5,15) + ", "}); });
+        
+        break;
+        case "S" :
+  
+        switch(random(1,4)) {case 1 : case 2 :
+        RadioValue = "";
+        let TabWeaponS = random(0,2);
+        let randomSpecial = random(1,TabWeap[TabWeaponS].length);
+
+        let TabMateriauxViable3 = RecupListMateriaux(TabWeap[TabWeaponS][randomSpecial-1][4]);
+        let randomMateriaux3 = random(0,TabMateriauxViable3.length-1);
+
+        newrowattrs["repeating_equipement_" + newrowid + "_Name"] = TabWeap[TabWeaponS][randomSpecial-1][0];
+        let result1 = (TabWeaponS == 0) ? TabMateriauxViable3[randomMateriaux3[3]] : TabMateriauxViable3[randomMateriaux3[4]];
+        let dmgSpecial = TabWeap[TabWeaponS][randomSpecial-1][1]*Arcane+-3+random(1,Difficulty) + TabWeap[TabWeaponS][randomSpecial-1][2] + result1;
+        newrowattrs["repeating_equipement_" + newrowid + "_Desc"] = dmgSpecial + "DMG | "+ TabWeap[TabWeaponS][randomSpecial-1][3] ;
+              
+        getAttrs(["BricABrac"], function(value) { setAttrs({"BricABrac": value.BricABrac + "Munitions: " + random(5,15) + ", "}); });
+              
+        break;
+        case 3 : case 4 :
+        RadioValue = "NO";
+        NmbrArme = -1;
+        break;
+        default:NmbrArme = -1;
+        break; }
+        break;
+      }
+     
+    
+      newrowattrs["repeating_equipement_" + newrowid + "_StatEquipement"] = RadioValue;
+      newrowattrs["repeating_equipement_" + newrowid + "_Percent"] = 99;
+  
+        
+        
+      if(RadioValue == "NO"){break}
+      else{setAttrs(newrowattrs);}
+  
+    }
+  
+    }
+
+ function RandomTalent() {
+  let i = 1;
+if(Difficulty==1 && random(0,100)>25){i=2;}
+
+  while(i<Difficulty+1){
+  var newrowid = generateRowID();
+  var newrowattrs = {};
+  newrowattrs["repeating_talent_" + newrowid + "_Name"] = "Nom du talent N°" + i;
+  newrowattrs["repeating_talent_" + newrowid + "_Desc"] = "Description";
+  newrowattrs["repeating_talent_" + newrowid + "_Percent"] = random(Difficulty,Arcane+2);
+  setAttrs(newrowattrs);
+i++;
+}
+}
+
+
+
+function RandomPts() 
+{
+let statPts =  Arcane  * Difficulty  * 3 + Arcane + 1
+
+if(Difficulty != 3){statPts = Math.round(statPts+ Math.random() * Arcane)}
+
+let Stats = [0,0,0,0,0]
+let i = 0;
+
+if(Difficulty == 3){statPts--}
+
+while(i!=statPts) {
+
+  // Percentage
+ let TabPercentStat = [random(1,100+(ClassesTab[Class][3][0]*3)),random(1,100+(ClassesTab[Class][3][1]*3)),random(1,100+(ClassesTab[Class][3][2]*3)),random(1,100+(ClassesTab[Class][3][3]*3)),random(1,100+(ClassesTab[Class][3][4]*3))]; 
+ 
+ 
+ 
+ let maxIndex = TabPercentStat.indexOf(Math.max.apply(null, TabPercentStat) );
+  
+ if(Stats[maxIndex] < Math.ceil(statPts/5))
+ {
+  Stats[maxIndex]++
+  i++
+ }
+ 
+ }
+
+if(Difficulty==3)
+{
+let maxIndex = ClassesTab[Class][3].indexOf(Math.max.apply(null, ClassesTab[Class][3]));
+Stats[maxIndex]++
+}
+
+// Etalonage
+
+if(Arcane != 1)
+{
+Stats = Stats.map((num, idx) => num + (ClassesTab[Class][3][idx] || 0) + ([-2,-2,-2,-2][idx] || 0));
+}
+
+//======================== Attribution des points à la fiche ==========================
+  setAttrs({"StatForce": Stats[0] });
+  setAttrs({"StatAgilite": Stats[1] });
+  setAttrs({"StatIntelligence": Stats[2] });
+  setAttrs({"StatCharisme": Stats[3] });
+  setAttrs({"StatEndurance": Stats[4] });
+
+}
+
+
+function random(min,max)
+{
+ return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function getRandomElements(arr, count) {
+  const shuffled = arr.sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, count);
+}
+
+
+
+// ===================================== FIN PNJ auto =================================================
+// ====================================================================================================
+
+// Choix du type de fiche
+
+on("clicked:Joueur", function() {setAttrs({"SheetType": "Joueur" });});
+on("clicked:Pnj", function() {setAttrs({"SheetType": "Pnj" });});
+
+
+// Button de Switch
+
+on("clicked:Arcanes", function() {setAttrs({"sheetTab": "Arcanes" });});
+on("clicked:Principal", function() {setAttrs({"sheetTab": "Principal" });});
+on("clicked:Inventaire", function() {setAttrs({"sheetTab": "Inventaire" });});
+
+
+// ROLL PERSONNALISE
+
+on('clicked:JET', (info) => {
+  startRoll("&{template:JET} {{name=Test Spell}} {{roll1=[[5d20]]}}", (results) => {
+      const total = results.results.roll1.result
+      const computed = total + 40000;
+
+      finishRoll( results.rollId,{ roll1: computed });
+  });
+});
+
+// GESTION repeating_arcanessorts
+
+on("change:repeating_arcanessorts:NmbrMots", function() {
+  getAttrs(["repeating_arcanessorts_NmbrMots", "Arcane"], function(values) {
+     setAttrs({
+      repeating_arcanessorts_Percent: Math.floor(100-(values.repeating_arcanessorts_NmbrMots*20)+values.Arcane*11)
+     });
+  });
+});
+
+
+on("change:Arcane", function() {
+on("repeating_arcanessorts", SetPercentSpell() );
+SetPercentSpell();
+})
+
+function SetPercentSpell() {
+
+  y=0;
+  getSectionIDs("arcanessorts", function(idarray) {
+     for(var i=0; i < idarray.length; i++) {
+
+      getAttrs(["repeating_arcanessorts_"+idarray[i]+"_NmbrMots", "Arcane", "repeating_arcanessorts_"+idarray[i]+"_Percent"], function(values) {
+      var VALUES = Object.entries(values);
+      y++;
+      setAttrs({[VALUES[2][0].toString()]: Math.floor(100-(VALUES[0][1]*20)+VALUES[1][1]*11) });  
+}); 
+}
+  });
+}
+
+
+
+// Gestion Calcul automatique %
+
+// Force
+on("change:StatForce", function() {
+  let Force, Agilite, Endurance;
+  getAttrs(["StatForce"], function(values) { 
+  Force = values.StatForce;
+  getAttrs(["StatAgilite"], function(values) {Agilite = values.StatAgilite;
+  setAttrs({"CompCMelee": 45+ Math.round(Force/1+Agilite/2)  }); });
+  getAttrs(["StatEndurance"], function(values) {Endurance = values.StatEndurance;
+  setAttrs({"CompSurvie": 45+ Math.round(Endurance/1+Force/2) }); }); }); });
+
+  // Agilité
+  on("change:StatAgilite", function() {
+    let Force, Agilite, Endurance, Intelligence;
+    getAttrs(["StatAgilite"], function(values) { 
+    Agilite = values.StatAgilite;
+    getAttrs(["StatForce"], function(values) {Force = values.StatForce;
+    setAttrs({"CompCMelee": 45+ Math.round(Force/1+Agilite/2)  }); });
+    getAttrs(["StatIntelligence"], function(values) {Intelligence = values.StatIntelligence;
+    setAttrs({"CompCDistance": 45+ Math.round(Agilite/1+Intelligence/2) }); 
+    setAttrs({"CompSnature": 45+ Math.round(Intelligence/1+Agilite/2) }); }); 
+    getAttrs(["StatEndurance"], function(values) {Endurance = values.StatEndurance;
+      setAttrs({"CompMouvement": 45+ Math.round(Agilite/1+Endurance/2) }); }); }); });
+
+      // Intelligence
+      on("change:StatIntelligence", function() {
+        let Agilite, Intelligence, Charisme, Endurance ;
+        getAttrs(["StatIntelligence"], function(values) { 
+          Intelligence = values.StatIntelligence;
+        getAttrs(["StatAgilite"], function(values) {Agilite = values.StatAgilite;
+        setAttrs({"CompCDistance": 45+ Math.round(Agilite/1+Intelligence/2) }); 
+        setAttrs({"CompSnature": 45+ Math.round(Intelligence/1+Agilite/2) }); }); 
+        getAttrs(["StatCharisme"], function(values) {Charisme = values.StatCharisme;
+          setAttrs({"CompSocial": 45+ Math.round(Charisme/1+Intelligence/2) });
+          setAttrs({"CompPerception": 45+ Math.round(Intelligence/1+Charisme/2) });
+          setAttrs({"CompSlangues": 45+ Math.round(Intelligence/1+Charisme/2) }); });
+        getAttrs(["StatEndurance"], function(values) {Endurance = values.StatEndurance;
+          setAttrs({"CompShistoire": 45+ Math.round(Intelligence/1+Endurance/2) }); }); }); });    
+
+
+          // Charisme
+          on("change:StatCharisme", function() {
+            getAttrs(["StatCharisme"], function(values) { 
+            let Intelligence, Charisme ;
+            Charisme = values.StatCharisme;
+            getAttrs(["StatIntelligence"], function(values) {Intelligence = values.StatIntelligence;
+              setAttrs({"CompSocial": 45+ Math.round(Charisme/1+Intelligence/2) });
+              setAttrs({"CompPerception": 45+ Math.round(Intelligence/1+Charisme/2) });
+              setAttrs({"CompSlangues": 45+ Math.round(Intelligence/1+Charisme/2) }); 
+            }); }); });
+
+
+            // Endurance
+            on("change:StatEndurance", function() {
+              getAttrs(["StatEndurance"], function(values) { 
+              let Endurance, Agilite, Intelligence, Force ;
+              Endurance = values.StatEndurance;              
+                getAttrs(["StatAgilite"], function(values) {Agilite = values.StatAgilite;
+                setAttrs({"CompMouvement": 45+ Math.round(Agilite/1+Endurance/2) }); });             
+                getAttrs(["StatForce"], function(values) {Force = values.StatForce;
+                  setAttrs({"CompSurvie": 45+ Math.round(Endurance/1+Force/2) }); });            
+                  getAttrs(["StatIntelligence"], function(values) {Intelligence = values.StatIntelligence;
+                    setAttrs({"CompShistoire": 45+ Math.round(Intelligence/1+Endurance/2) }); });  }); });
+
+</script>
+
+
+<!-- ===================== LES ROLLS TEMPLATES ================= -->
+
+<rolltemplate class="sheet-rolltemplate-Display">
+
+  <div class="container">
+  
+    <h2 class="titre">{{name}}</h2>    
+
+    <div class="slash"></div>
+
+    <div class="Desc">{{Desc}}</div>
+    
+  </div>
+
+</rolltemplate>
+
+<rolltemplate class="sheet-rolltemplate-JETSTAT">
+
+    <div class="container">
+    
+      <h2 class="titre">{{name}}</h2>    
+  
+      <div class="slash"></div>
+
+      <div class="jets">
+    
+        <div class="RollImage">{{src}}</div>
+        <div><p>{{roll}}</p></div>
+        <div class="RollImage">{{src}}</div>
+
+        
+      </div>
+
+
+      <div class="Desc">{{Desc}}</div>
+      
+    </div>
+
+
+
+</rolltemplate>
+
+<rolltemplate class="sheet-rolltemplate-JetSimple">
+
+  <div class="container">
+
+    <h2 class="titre">{{name}}</h2>    
+
+    
+
+    <div class="slash"></div>
+    <div class="jets">
+
+      <div>{{PercentRoll}}</div>
+      <div class="RollJSSimple">{{icon}}</div>
+      <div class="ArcaneMots">{{mots}}</div>
+      <div><p>{{PercentStat}}</p></div>
+      
+    </div>
+
+    <div class="slash" style="width:85%"></div>
+    <div class="Desc">{{Desc}}</div>
+    
+  </div>
+
+</rolltemplate>
+
